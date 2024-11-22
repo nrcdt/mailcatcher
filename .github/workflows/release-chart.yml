@@ -37,14 +37,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Chart | Push
-        uses: appany/helm-oci-chart-releaser@v0.4.2
+      - name: Helm Chart Releaser
+        uses: helm/chart-releaser-action@v1.6.0
         with:
-          name: mailcatcher
-          repository: nrcdt
-          tag: v0.10.0
-          path: chart/mailcatcher
-          registry: ghcr.io
-          registry_username: ${{ secrets.REGISTRY_USERNAME }}
-          registry_password: ${{ secrets.REGISTRY_PASSWORD }}
-          update_dependencies: 'true' # Defaults to false
+          charts_dir: chart/mailcatcher
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
