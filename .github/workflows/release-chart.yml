@@ -40,7 +40,7 @@ jobs:
       - name: Helm Chart Releaser
         uses: helm/chart-releaser-action@v1.6.0
         with:
-          charts_dir: chart/mailcatcher
+          charts_dir: chart/
           mark_as_latest: 'true'
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
