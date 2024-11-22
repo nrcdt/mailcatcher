@@ -14,8 +14,7 @@ image:
   tag: ""
 
 # This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
-imagePullSecrets:
-  - name: dockerconfigjson-github-com
+imagePullSecrets: {}
 # This is to override the chart name.
 nameOverride: ""
 fullnameOverride: ""
