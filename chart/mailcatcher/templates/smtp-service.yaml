@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "mailcatcher.fullname" . }}-smtp
+  labels:
+    {{- include "mailcatcher.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.smtp_service.type }}
+  ports:
+    - port: {{ .Values.smtp_service.port }}
+      targetPort: 1025
+      protocol: TCP
+      name: smtp
+  selector:
+    {{- include "mailcatcher.selectorLabels" . | nindent 4 }}

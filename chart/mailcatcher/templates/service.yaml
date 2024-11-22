@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "mailcatcher.fullname" . }}-http
+  labels:
+    {{- include "mailcatcher.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.http_service.type }}
+  ports:
+    - port: {{ .Values.http_service.port }}
+      targetPort: 1080
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "mailcatcher.selectorLabels" . | nindent 4 }}
