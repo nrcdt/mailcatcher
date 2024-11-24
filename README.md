@@ -1,6 +1,11 @@
 # Mailcatcher Helm Chart
 This Helm chart installs the Mailcatcher service into a Kubernetes cluster. Mailcatcher is a simple SMTP server and web interface designed for testing email-sending applications by capturing and displaying emails locally instead of sending them to their intended recipients.
 
+## Application Source:
+
+https://mailcatcher.me/
+
+https://github.com/sj26/mailcatcher
 ## Features
 Deploys the Mailcatcher service to your Kubernetes cluster.
 Configurable SMTP and HTTP ports.
