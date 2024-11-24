@@ -26,22 +26,25 @@ Replace <your-namespace> with the namespace where you want to deploy Mailcatcher
 ### Configuration
 The following table lists the configurable parameters of the Mailcatcher chart and their default values:
 
-| Parameter         | 	Description                             | 	Default                   |
-|-------------------|------------------------------------------|----------------------------|
-| replicaCount      | 	Number of replicas for the deployment   | 	1                         |
-| image.repository  | 	github image repository for Mailcatcher | 	gchr.io/nrcdt/mailcatcher |
-| image.tag         | 	Tag of the Mailcatcher Docker image     | 	latest                    |
-| image.pullPolicy  | 	Image pull policy                       | 	IfNotPresent              |
-| smtp_service.port | 	Port for the SMTP server                | 	25                        |
-| smtp_service.type | 	Kubernetes service type                 | 	ClusterIP                 |
-| http_service.port | 	Port for the web interface              | 	80                        |
-| http_service.type | 	Kubernetes service type                 | 	ClusterIP                 |
-| ingress.enabled   | 	Enable Ingress resource                 | 	false                     |
-| ingress.hosts     | 	List of ingress hosts	                  | []                         |
-| resources         | 	Resource requests and limits	           | {}                         |
-| nodeSelector      | 	Node selector for scheduling            | 	{}                        |
-| tolerations       | 	Tolerations for scheduling	             | []                         |
-| affinity          | 	Pod affinity rules                      | 	{}                        |
+| Parameter                 | 	Description                             | 	Default                   |
+|---------------------------|------------------------------------------|----------------------------|
+| replicaCount              | 	Number of replicas for the deployment   | 	1                         |
+| image.repository          | 	github image repository for Mailcatcher | 	gchr.io/nrcdt/mailcatcher |
+| image.tag                 | 	Tag of the Mailcatcher Docker image     | 	latest                    |
+| image.pullPolicy          | 	Image pull policy                       | 	IfNotPresent              |
+| smtp_service.port         | 	Port for the SMTP server                | 	25                        |
+| smtp_service.type         | 	Kubernetes service type                 | 	ClusterIP                 |
+| http_service.port         | 	Port for the web interface              | 	80                        |
+| http_service.type         | 	Kubernetes service type                 | 	ClusterIP                 |
+| ingress.enabled           | 	Enable Ingress resource                 | 	false                     |
+| ingress.hosts             | 	List of ingress hosts	                  | []                         |
+| ingress.htpasswd.enabled  | Enable htpasswd                          | false                      |
+| ingress.htpasswd.user     | Username for webinterface                |                            |
+| ingress.htpasswd.password | Password for webinterface                |                            |
+| resources                 | 	Resource requests and limits	           | {}                         |
+| nodeSelector              | 	Node selector for scheduling            | 	{}                        |
+| tolerations               | 	Tolerations for scheduling	             | []                         |
+| affinity                  | 	Pod affinity rules                      | 	{}                        |
 
 
 ### Accessing the Service
